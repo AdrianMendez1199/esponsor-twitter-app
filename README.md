@@ -11,7 +11,7 @@ docker -v
 
 * clone project 
   ```sh 
-     git clone project-url and git submodule update --init 
+     git clone git@github.com:AdrianMendez1199/esponsor-twitter-app.git && git submodule update --init 
    ``` 
 * copy .env.sample .env
 * docker-compose up -d --build
