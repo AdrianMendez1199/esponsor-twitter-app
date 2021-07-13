@@ -1,0 +1,6 @@
+[submodule "fronted"]
+	path = fronted
+	url = git@github.com:AdrianMendez1199/frontend-esponsor-twitter.git
+[submodule "backend"]
+	path = backend
+	url = git@github.com:AdrianMendez1199/backend-esponsor-twitter.git
