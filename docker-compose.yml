@@ -30,7 +30,7 @@ services:
       - "80:80"
     entrypoint: sh -c "php /var/www/html/artisan migrate && apache2-foreground"
 
-   client:
+  client:
     volumes:
       - ./fronted:/app
     build: ./fronted
