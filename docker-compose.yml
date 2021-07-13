@@ -32,8 +32,8 @@ services:
 
    client:
     volumes:
-      - ./client:/app
-    build: ./client
+      - ./fronted:/app
+    build: ./fronted
     links:
       - backend
     container_name: esponsor-client
