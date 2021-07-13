@@ -12,12 +12,10 @@ services:
     ports:
       - "5432:5432"
     volumes:
-    # - ./scripts/setup.sql:/docker-entrypoint-initdb.d/setup.sql
     - ./postgres-data:/var/lib/postgresql/data
   
 
   backend:
-    # restart: always
     depends_on: 
       - database
     links: 
@@ -32,14 +30,16 @@ services:
       - "80:80"
     entrypoint: sh -c "php /var/www/html/artisan migrate && apache2-foreground"
 
-  #  client:
-  #   volumes:
-  #     - ./client:/app
-  #   build: ./client
-  #   container_name: esponsor-client
-  #   image: esponsor/esponsor-client
-  #   ports:
-  #     - "3000:3000"
+   client:
+    volumes:
+      - ./client:/app
+    build: ./client
+    links:
+      - backend
+    container_name: esponsor-client
+    image: esponsor/esponsor-client
+    ports:
+      - "3000:3000"
 volumes:
   db_data:
 
